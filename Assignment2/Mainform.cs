@@ -10,6 +10,7 @@ namespace Assignment2
     public partial class Mainform : Form
     {
         private Animal animal; // Declare animal
+        private Animal currentAnimal;
         private AnimalManager animalManager = new AnimalManager(new List<Animal>(), 1);
         public Mainform()
         {
@@ -44,6 +45,7 @@ namespace Assignment2
             textBoxSpecific1.Visible = false; // make gui element invisible
             textBoxSpecific2.Visible = false; // make gui element invisible
             groupBoxAnimalSpecifications.Text = "Animal Specifications";
+            textBox1.ReadOnly = true;
 
         }
 
@@ -201,7 +203,7 @@ namespace Assignment2
                         MessageBox.Show("Expected lifespan has to be a number!");
                         return;
                     }
-                    animal = new Dog("0000", this.textBoxName.Text, int.Parse(this.textBoxAge.Text), determineGender(), int.Parse(this.textBoxWeight.Text), int.Parse(this.textBoxSpecific2.Text), this.textBoxSpecific1.Text, CategoryType.Mammal);
+                    animal = new Dog(animalManager.GetNewID(CategoryType.Mammal), this.textBoxName.Text, int.Parse(this.textBoxAge.Text), determineGender(), int.Parse(this.textBoxWeight.Text), int.Parse(this.textBoxSpecific2.Text), this.textBoxSpecific1.Text, CategoryType.Mammal);
                     Dog dog = (Dog)animal;
                     break;
                 case "MONKEY":
@@ -224,7 +226,7 @@ namespace Assignment2
                         MessageBox.Show("Swim speed has to be a number!");
                         return;
                     }
-                    animal = new Whale("0000", textBoxName.Text, int.Parse(textBoxAge.Text), determineGender(), int.Parse(textBoxWeight.Text), int.Parse(textBoxSpecific2.Text), int.Parse(textBoxSpecific1.Text), CategoryType.Fish);
+                    animal = new Whale(animalManager.GetNewID(CategoryType.Fish), textBoxName.Text, int.Parse(textBoxAge.Text), determineGender(), int.Parse(textBoxWeight.Text), int.Parse(textBoxSpecific2.Text), int.Parse(textBoxSpecific1.Text), CategoryType.Fish);
                     Whale whale = (Whale)animal;
                     break;
                 case "SHARK":
@@ -238,17 +240,26 @@ namespace Assignment2
                         MessageBox.Show("Swim speed has to be a number!");
                         return;
                     }
-                    animal = new Shark(animalManager.GetNewID(CategoryType.Mammal), textBoxName.Text, int.Parse(textBoxAge.Text), determineGender(), int.Parse(textBoxWeight.Text), int.Parse(textBoxSpecific2.Text), int.Parse(textBoxSpecific1.Text), CategoryType.Fish);
+                    animal = new Shark(animalManager.GetNewID(CategoryType.Fish), textBoxName.Text, int.Parse(textBoxAge.Text), determineGender(), int.Parse(textBoxWeight.Text), int.Parse(textBoxSpecific2.Text), int.Parse(textBoxSpecific1.Text), CategoryType.Fish);
                     Shark shark = (Shark)animal;
 
-                    labelEaterTypeOutput.Text = animal.getFoodSchedule().EaterType.ToString();
-                    listBox2.DataSource = animal.getFoodSchedule().GetFoodListInfoStrings();
                     break;
             }
             animalManager.Add(animal);
+            labelEaterTypeOutput.Text = animal.getFoodSchedule().EaterType.ToString();
+            listBox2.DataSource = animal.getFoodSchedule().GetFoodListInfoStrings();
             listBox1.DataSource = animalManager.GetAnimalInfoStrings();
             textBox1.Text = animal.GetExtraInfo();
 
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int index = listBox1.SelectedIndex;
+            currentAnimal = animalManager.GetAnimalAt(index);
+            labelEaterTypeOutput.Text = currentAnimal.getFoodSchedule().EaterType.ToString();
+            listBox2.DataSource = currentAnimal.getFoodSchedule().GetFoodListInfoStrings();
+            textBox1.Text = currentAnimal.GetExtraInfo();
         }
     }
     }

@@ -125,14 +125,14 @@
             // 
             // textBoxSpecific2
             // 
-            this.textBoxSpecific2.Location = new System.Drawing.Point(129, 273);
+            this.textBoxSpecific2.Location = new System.Drawing.Point(155, 273);
             this.textBoxSpecific2.Name = "textBoxSpecific2";
             this.textBoxSpecific2.Size = new System.Drawing.Size(100, 23);
             this.textBoxSpecific2.TabIndex = 15;
             // 
             // textBoxSpecific1
             // 
-            this.textBoxSpecific1.Location = new System.Drawing.Point(129, 241);
+            this.textBoxSpecific1.Location = new System.Drawing.Point(155, 241);
             this.textBoxSpecific1.Name = "textBoxSpecific1";
             this.textBoxSpecific1.Size = new System.Drawing.Size(100, 23);
             this.textBoxSpecific1.TabIndex = 14;
@@ -264,6 +264,7 @@
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(305, 154);
             this.listBox1.TabIndex = 13;
+            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // listBox2
             // 

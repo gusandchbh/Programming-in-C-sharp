@@ -17,7 +17,7 @@ namespace Assignment2.Fishes
         private int teeth; // Set accessibility to private
 
         public Shark(string id, string name, int age, Gender gender, int weight, int swimSpeed, int teeth, CategoryType category) 
-            : base(id, name, age, gender, weight, teeth, category) // // call constructor of superclass
+            : base(id, name, age, gender, weight, swimSpeed, category) // // call constructor of superclass
         {
             this.teeth = teeth;
             SetFoodSchedule();
@@ -40,7 +40,7 @@ namespace Assignment2.Fishes
 
             strOut += Environment.NewLine + string.Format("{0,-22} {1,15}", "Teeth:", teeth.ToString());
 
-            return strOut;
+            return "Shark" + Environment.NewLine + Environment.NewLine + strOut;
         }
 
         public override FoodSchedule getFoodSchedule()
