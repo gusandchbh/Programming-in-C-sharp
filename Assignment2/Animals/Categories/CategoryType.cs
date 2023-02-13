@@ -1,10 +1,9 @@
-﻿namespace Assignment2.Animals.Categories
+﻿namespace Assignment2.Animals.Categories;
+
+public enum CategoryType
 {
-    public enum CategoryType
-    {
-        Bird,
-        Insect,
-        Mammal,
-        Fish
-    }
+    Bird,
+    Insect,
+    Mammal,
+    Fish
 }

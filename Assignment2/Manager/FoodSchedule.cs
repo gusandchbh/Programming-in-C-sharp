@@ -1,70 +1,56 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace Assignment2.Manager;
 
-namespace Assignment2.Manager
+public class FoodSchedule
 {
-    public class FoodSchedule
+    private readonly List<string> foodList;
+
+
+    public FoodSchedule()
     {
-        private EaterType eaterType;
-        private List<string> foodList;
+        foodList = new List<string>();
+    }
 
+    public EaterType EaterType { get; set; }
 
-        public FoodSchedule()
-        {
-            foodList = new List<string>();
-        }
+    private int Count()
+    {
+        var count = 0;
+        for (var i = 0; i < foodList.Count; i++) count++;
+        return count;
+    }
 
-        private int Count()
-        {
-            int count = 0;
-            for (int i = 0; i < foodList.Count; i++)
-            {
-                count++;
-            }
-            return count;
-        }
+    public void Add(string item)
+    {
+        foodList.Add(item);
+    }
 
-        public EaterType EaterType {
-            get { return eaterType; }
-            set { eaterType = value; }
-        }
+    public bool ChangeAt(int index, string item)
+    {
+        return true;
+    }
 
-        public void Add(String item)
-        {
-            foodList.Add(item);
-        }
+    public bool CheckIndex(int index)
+    {
+        return true;
+    }
 
-        public bool ChangeAt(int index, string item)
-        {
-            return true;
-        }
+    public bool DeleteAt(int index)
+    {
+        return true;
+    }
 
-        public bool CheckIndex(int index)
-        {
-            return true;
-        }
+    public string[] GetFoodListInfoStrings()
+    {
+        return foodList.ToArray();
+    }
 
-        public bool DeleteAt(int index)
-        {
-            return true;
-        }
+    public string Title()
+    {
+        return "";
+    }
 
-        public string[] GetFoodListInfoStrings()
-        {
-            return foodList.ToArray();
-        }
-
-        public string Title()
-        {
-            return "";
-        }
-
-        public override string ToString()
-        {
-            return "LOL";
-        }
+    public override string ToString()
+    {
+        return "LOL";
     }
 }

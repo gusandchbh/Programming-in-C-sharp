@@ -1,29 +1,16 @@
 ﻿using Assignment2.Manager;
 
-namespace Assignment2.Animals
+namespace Assignment2.Animals;
+
+public interface IAnimal
 {
-    public interface IAnimal
-    {
-        string Name
-        {
-            get;
-            set;
-        }
+    string Name { get; set; }
 
-        string ID
-        {
-            get;
-            set;
-        }
+    string ID { get; set; }
 
-        Gender Gender
-        {
-            get; 
-            set;
-        }
+    Gender Gender { get; set; }
 
-        FoodSchedule getFoodSchedule();
+    FoodSchedule getFoodSchedule();
 
-        string GetExtraInfo();
-    }
+    string GetExtraInfo();
 }

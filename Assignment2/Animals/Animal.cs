@@ -1,112 +1,77 @@
 ﻿using Assignment2.Animals.Categories;
 using Assignment2.Manager;
 
-namespace Assignment2.Animals
+namespace Assignment2.Animals;
+
+public abstract class Animal : IAnimal
 {
-    public abstract class Animal : IAnimal
+    /// <summary>
+    ///     Constructor for Animal
+    /// </summary>
+    /// <param name="id"></param>
+    /// <param name="name"></param>
+    /// <param name="age"></param>
+    /// <param name="gender"></param>
+    /// <param name="weight"></param>
+    protected Animal(string id, string name, int age, Gender gender, int weight, CategoryType category)
     {
+        this.ID = id;
+        this.Name = name;
+        this.Age = age;
+        this.Gender = gender;
+        this.Weight = weight;
+        this.Category = category;
+    }
 
-        private string id; // Set accessibility to private
-        private string name; // Set accessibility to private
-        private int age; // Set accessibility to private
-        private Gender gender; // Set accessibility to private
-        private int weight; // Set accessibility to private
-        private CategoryType category;
+    public CategoryType Category { get; set; }
 
-        /// <summary>
-        /// Constructor for Animal
-        /// </summary>
-        /// <param name="id"></param>
-        /// <param name="name"></param>
-        /// <param name="age"></param>
-        /// <param name="gender"></param>
-        /// <param name="weight"></param>
-        protected Animal(string id, string name, int age, Gender gender, int weight, CategoryType category) 
-        {
-            this.id = id;
-            this.name = name;
-            this.age = age;
-            this.gender = gender;
-            this.weight = weight;
-            this.category = category;
-        }
+    /// <summary>
+    ///     Property for age
+    /// </summary>
+
+    public int Age { get; set; }
+
+    /// <summary>
+    ///     Property for weight
+    /// </summary>
+
+    public int Weight { get; set; }
 
 
-        public virtual string GetExtraInfo()
-        {
-            string strOut = string.Empty;
+    public virtual string GetExtraInfo()
+    {
+        var strOut = string.Empty;
 
-            strOut = string.Format("{0,-20} {1,15}\n", "Category:", category.ToString()) + Environment.NewLine;
+        strOut = string.Format("{0,-20} {1,15}\n", "Category:", Category.ToString()) + Environment.NewLine;
 
-            return strOut;
-        }
+        return strOut;
+    }
 
-        /// <summary>
-        /// Property for name
-        /// </summary>
-        public string Name
-        {
-            get { return name; }
-            set { name = value; }
-        }
+    /// <summary>
+    ///     Property for name
+    /// </summary>
+    public string Name { get; set; }
 
-        public CategoryType Category
-        {
-            get { return category; }
-            set { category = value; }
-        }
+    /// <summary>
+    ///     Property for gender
+    /// </summary>
 
-        /// <summary>
-        /// Property for age
-        /// </summary>
+    public Gender Gender { get; set; }
 
-        public int Age
-        {
-            get { return age; }
-            set { age = value; }
-        }
+    /// <summary>
+    ///     Property for id
+    /// </summary>
 
-        /// <summary>
-        /// Property for gender
-        /// </summary>
+    public string ID { get; set; }
 
-        public Gender Gender
-        {
-            get { return gender; }
-            set { gender = value; }
-        }
+    public abstract FoodSchedule getFoodSchedule();
 
-        /// <summary>
-        /// Property for weight
-        /// </summary>
+    public override string ToString()
+    {
+        var strOut = string.Empty;
 
-        public int Weight
-        {
-            get { return weight; }
-            set { weight = value; }
-        }
+        strOut = string.Format("{0,-15} {1,-30} {2, -25} {3, -10}\n", ID, Name, Age, Gender);
 
-        /// <summary>
-        /// Property for id
-        /// </summary>
-
-        public string ID
-        {
-            get => id; 
-            set { id = value; }
-        }
-
-        public override string ToString()
-        {
-
-            string strOut = string.Empty;
-
-            strOut = string.Format("{0,-15} {1,-30} {2, -25} {3, -10}\n", ID, Name, Age, Gender);
-
-            return strOut;
-        }
-
-        public abstract FoodSchedule getFoodSchedule();
-
+        return strOut;
     }
 }
