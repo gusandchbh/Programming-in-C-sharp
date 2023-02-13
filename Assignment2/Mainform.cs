@@ -1,8 +1,10 @@
 using System.Windows.Forms;
 using Assignment2.Animals;
 using Assignment2.Animals.Categories;
+using Assignment2.Birds;
 using Assignment2.Mammals;
 using Assignment2.Fishes;
+using Assignment2.Insects;
 using Assignment2.Manager;
 
 namespace Assignment2
@@ -27,6 +29,8 @@ namespace Assignment2
             buttonAdd.Text = "Add";
             listBoxCategoryType.Items.Add("Mammal");
             listBoxCategoryType.Items.Add("Fish");
+            listBoxCategoryType.Items.Add("Insect");
+            listBoxCategoryType.Items.Add("Bird");
             labelWeight.Text = "Weight (kg)";
             labelAnimalGender.Text = "Gender";
             labelAnimalAge.Text = "Age";
@@ -60,6 +64,14 @@ namespace Assignment2
             {
                 listBoxAnimalObject.Items.Add("Whale"); // Add whale and shark if Fish is selected
                 listBoxAnimalObject.Items.Add("Shark");
+            } else if (this.listBoxCategoryType.SelectedIndex == 2)
+            {
+                listBoxAnimalObject.Items.Add("Spider");
+                listBoxAnimalObject.Items.Add("Ant");
+            } else if (this.listBoxCategoryType.SelectedIndex == 3)
+            {
+                listBoxAnimalObject.Items.Add("Penguin");
+                listBoxAnimalObject.Items.Add("Parrot");
             }
         }
         
@@ -84,6 +96,22 @@ namespace Assignment2
             else if (listBoxCategoryType.SelectedIndex == 1 && this.listBoxAnimalObject.SelectedIndex == 1)
             {
                 return "SHARK";
+            }
+            else if (listBoxCategoryType.SelectedIndex == 2 && this.listBoxAnimalObject.SelectedIndex == 0)
+            {
+                return "SPIDER";
+            }
+            else if (listBoxCategoryType.SelectedIndex == 2 && this.listBoxAnimalObject.SelectedIndex == 1)
+            {
+                return "ANT";
+            }
+            else if (listBoxCategoryType.SelectedIndex == 3 && this.listBoxAnimalObject.SelectedIndex == 0)
+            {
+                return "PENGUIN";
+            }
+            else if (listBoxCategoryType.SelectedIndex == 3 && this.listBoxAnimalObject.SelectedIndex == 1)
+            {
+                return "PARROT";
             }
             return "";
         }
@@ -118,8 +146,32 @@ namespace Assignment2
                 labelSpecific2.Text = "Swim speed (km/h)";
                 labelSpecific1.Text = "Number of teeth";
             }
+            else if (getAnimal().Equals("SPIDER"))
+            {
+                labelSpecifications.Text = "Insect Specifications";
+                labelSpecific2.Text = "Number of legs";
+                labelSpecific1.Text = "Size of web";
+            }
+            else if (getAnimal().Equals("ANT"))
+            {
+                labelSpecifications.Text = "Insect Specifications";
+                labelSpecific2.Text = "Number of legs";
+                labelSpecific1.Text = "Size of colony";
 
-            labelSpecifications.Visible = true;
+            }
+            else if (getAnimal().Equals("PENGUIN"))
+            {
+                labelSpecifications.Text = "Bird Specifications";
+                labelSpecific2.Text = "Species";
+                labelSpecific1.Text = "Cuteness";
+            }
+            else if (getAnimal().Equals("PARROT"))
+            {
+                labelSpecifications.Text = "Bird Specifications";
+                labelSpecific2.Text = "Species";
+                labelSpecific1.Text = "Favorite word";
+            }
+                labelSpecifications.Visible = true;
             labelSpecific1.Visible = true;
             labelSpecific2.Visible = true;
             textBoxSpecific1.Visible = true;
@@ -204,7 +256,6 @@ namespace Assignment2
                         return;
                     }
                     animal = new Dog(animalManager.GetNewID(CategoryType.Mammal), this.textBoxName.Text, int.Parse(this.textBoxAge.Text), determineGender(), int.Parse(this.textBoxWeight.Text), int.Parse(this.textBoxSpecific2.Text), this.textBoxSpecific1.Text, CategoryType.Mammal);
-                    Dog dog = (Dog)animal;
                     break;
                 case "MONKEY":
                     if (!onlyDigits(this.textBoxSpecific2.Text))
@@ -213,7 +264,6 @@ namespace Assignment2
                         return;
                     }
                     animal = new Monkey(animalManager.GetNewID(CategoryType.Mammal), this.textBoxName.Text, int.Parse(this.textBoxAge.Text), determineGender(), int.Parse(this.textBoxWeight.Text), int.Parse(this.textBoxSpecific2.Text), this.textBoxSpecific1.Text, CategoryType.Mammal);
-                    Monkey monkey = (Monkey)animal;
                     break;
                 case "WHALE":
                     if (!onlyDigits(textBoxSpecific1.Text))
@@ -227,7 +277,6 @@ namespace Assignment2
                         return;
                     }
                     animal = new Whale(animalManager.GetNewID(CategoryType.Fish), textBoxName.Text, int.Parse(textBoxAge.Text), determineGender(), int.Parse(textBoxWeight.Text), int.Parse(textBoxSpecific2.Text), int.Parse(textBoxSpecific1.Text), CategoryType.Fish);
-                    Whale whale = (Whale)animal;
                     break;
                 case "SHARK":
                     if (!onlyDigits(this.textBoxSpecific1.Text))
@@ -241,8 +290,43 @@ namespace Assignment2
                         return;
                     }
                     animal = new Shark(animalManager.GetNewID(CategoryType.Fish), textBoxName.Text, int.Parse(textBoxAge.Text), determineGender(), int.Parse(textBoxWeight.Text), int.Parse(textBoxSpecific2.Text), int.Parse(textBoxSpecific1.Text), CategoryType.Fish);
-                    Shark shark = (Shark)animal;
-
+                    break;
+                case "SPIDER":
+                    if (!onlyDigits(this.textBoxSpecific1.Text))
+                    {
+                        MessageBox.Show("Number of legs has to be a number!");
+                        return;
+                    }
+                    if (!onlyDigits(textBoxSpecific2.Text))
+                    {
+                        MessageBox.Show("Web size has to be a number!");
+                        return;
+                    }
+                    animal = new Spider(animalManager.GetNewID(CategoryType.Insect), textBoxName.Text, int.Parse(textBoxAge.Text), determineGender(), int.Parse(textBoxWeight.Text), int.Parse(textBoxSpecific2.Text), int.Parse(textBoxSpecific1.Text), CategoryType.Insect);
+                    break;
+                case "ANT":
+                    if (!onlyDigits(this.textBoxSpecific2.Text))
+                    {
+                        MessageBox.Show("Number of legs has to be a number!");
+                        return;
+                    }
+                    if (!onlyDigits(textBoxSpecific1.Text))
+                    {
+                        MessageBox.Show("Colony size has to be a number!");
+                        return;
+                    }
+                    animal = new Spider(animalManager.GetNewID(CategoryType.Insect), textBoxName.Text, int.Parse(textBoxAge.Text), determineGender(), int.Parse(textBoxWeight.Text), int.Parse(textBoxSpecific2.Text), int.Parse(textBoxSpecific1.Text), CategoryType.Insect);
+                    break;
+                case "PENGUIN":
+                    if (!onlyDigits(textBoxSpecific1.Text))
+                    {
+                        MessageBox.Show("Cuteness has to be a number!");
+                        return;
+                    }
+                    animal = new Penguin(animalManager.GetNewID(CategoryType.Bird), textBoxName.Text, int.Parse(textBoxAge.Text), determineGender(), int.Parse(textBoxWeight.Text), textBoxSpecific2.Text, int.Parse(textBoxSpecific1.Text), CategoryType.Bird);
+                    break;
+                case "PARROT":
+                    animal = new Parrot(animalManager.GetNewID(CategoryType.Bird), textBoxName.Text, int.Parse(textBoxAge.Text), determineGender(), int.Parse(textBoxWeight.Text), textBoxSpecific2.Text, textBoxSpecific1.Text, CategoryType.Bird);
                     break;
             }
             animalManager.Add(animal);

@@ -35,11 +35,6 @@ namespace Assignment2.Animals.Categories
             return strOut;
         }
 
-        public override string ToString()
-        {
-            return base.ToString();
-        }
-
 
     }
 

@@ -29,16 +29,11 @@ namespace Assignment2.Fishes
             set { teeth = value; }
         }
 
-        public override string ToString()
-        {
-            return base.ToString();
-        }
-
         public override string GetExtraInfo()
         {
             string strOut = base.GetExtraInfo();
 
-            strOut += Environment.NewLine + string.Format("{0,-22} {1,15}", "Teeth:", teeth.ToString());
+            strOut += Environment.NewLine + string.Format("{0,-22} {1,15}", "Teeth:", Teeth);
 
             return "Shark" + Environment.NewLine + Environment.NewLine + strOut;
         }
@@ -51,11 +46,10 @@ namespace Assignment2.Fishes
         public void SetFoodSchedule()
         {
             foodSchedule = new FoodSchedule();
-            foodSchedule.EaterType = EaterType.Omnivorous;
-            foodSchedule.Add("Morning: bones and milk");
-            foodSchedule.Add("Lunch: beef and water");
-            foodSchedule.Add("Evening: chicken");
-
+            foodSchedule.EaterType = EaterType.Carnivore;
+            foodSchedule.Add("Morning: octopus sallad");
+            foodSchedule.Add("Lunch: 4-5 shrimps");
+            foodSchedule.Add("Evening: crabs and lobsters");
         }
     }
 }

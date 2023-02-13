@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Assignment2.Animals;
 using Assignment2.Animals.Categories;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Assignment2.Mammals
 {
@@ -41,6 +42,15 @@ namespace Assignment2.Mammals
             set { breed = value; }
         }
 
+        public override string GetExtraInfo()
+        {
+            string strOut = base.GetExtraInfo();
+
+            strOut += Environment.NewLine + string.Format("{0,-22} {1,15}", "Breed:", Breed);
+
+            return "Dog" + Environment.NewLine + Environment.NewLine + strOut.Replace(",", "");
+        }
+
         public override FoodSchedule getFoodSchedule()
         {
             return foodSchedule;
@@ -54,11 +64,6 @@ namespace Assignment2.Mammals
             foodSchedule.Add("Lunch: beef and water");
             foodSchedule.Add("Evening: chicken");
 
-        }
-
-        public override string ToString()
-        {
-            return base.ToString() + " Breed: " + breed;
         }
     }
 }

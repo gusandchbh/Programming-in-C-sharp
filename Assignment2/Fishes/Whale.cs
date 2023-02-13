@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Assignment2.Animals;
 using Assignment2.Animals.Categories;
 using Assignment2.Manager;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Assignment2.Fishes
 {
@@ -19,6 +20,7 @@ namespace Assignment2.Fishes
             : base(id, name, age, gender, weight, swimSpeed, category) // call constructor of superclass
         {
             this.blowholes = blowholes;
+            SetFoodSchedule();
         }
 
         public int Blowholes // Property for blowholes
@@ -27,9 +29,13 @@ namespace Assignment2.Fishes
             set { blowholes = value; }
         }
 
-        public override string ToString()
+        public override string GetExtraInfo()
         {
-            return base.ToString() + " Blowholes: " + blowholes;
+            string strOut = base.GetExtraInfo();
+
+            strOut += Environment.NewLine + string.Format("{0,-22} {1,15}", "Blowholes:", Blowholes);
+
+            return "Whale" + Environment.NewLine + Environment.NewLine + strOut;
         }
 
         public override FoodSchedule getFoodSchedule()
@@ -40,14 +46,10 @@ namespace Assignment2.Fishes
         public void SetFoodSchedule()
         {
             foodSchedule = new FoodSchedule();
-            foodSchedule.EaterType = EaterType.Omnivorous;
-            foodSchedule.Add("Morning: bones and milk");
-            foodSchedule.Add("Lunch: beef and water");
-            foodSchedule.Add("Evening: chicken");
-
+            foodSchedule.EaterType = EaterType.Carnivore;
+            foodSchedule.Add("Morning: squid sallad");
+            foodSchedule.Add("Lunch: plankton");
+            foodSchedule.Add("Evening: 2-3 sharks");
         }
-
-
-
     }
 }

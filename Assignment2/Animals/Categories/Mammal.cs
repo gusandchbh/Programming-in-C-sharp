@@ -29,9 +29,13 @@
             set { expectedLifeSpan = value; }
         }
 
-        public override string ToString()
+        public override string GetExtraInfo()
         {
-            return base.ToString();
+            string strOut = base.GetExtraInfo();
+
+            strOut += Environment.NewLine + string.Format("{0,-28}, {1, -17}\n", "Expected lifespan:", ExpectedLifeSpan) + Environment.NewLine;
+
+            return strOut;
         }
 
     }

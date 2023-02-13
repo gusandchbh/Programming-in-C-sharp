@@ -8,9 +8,4 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Folder Include="Birds\" />
-    <Folder Include="Insects\" />
-  </ItemGroup>
-
 </Project>
