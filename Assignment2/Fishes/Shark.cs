@@ -38,7 +38,7 @@ namespace Assignment2.Fishes
         {
             string strOut = base.GetExtraInfo();
 
-            strOut += string.Format("{0,-15} {1,10}\n", "Teeth:", teeth.ToString());
+            strOut += Environment.NewLine + string.Format("{0,-22} {1,15}", "Teeth:", teeth.ToString());
 
             return strOut;
         }

@@ -46,26 +46,16 @@
             this.listBoxAnimalObject = new System.Windows.Forms.ListBox();
             this.listBoxCategoryType = new System.Windows.Forms.ListBox();
             this.labelAnimalAge = new System.Windows.Forms.Label();
-            this.labelAnimalSpecific2Output = new System.Windows.Forms.Label();
-            this.labelAnimalSpecific2 = new System.Windows.Forms.Label();
             this.labelAnimalName = new System.Windows.Forms.Label();
-            this.labelAnimalSpecific1Output = new System.Windows.Forms.Label();
-            this.labelAnimalWeightOutput = new System.Windows.Forms.Label();
-            this.labelAnimalSpecific1 = new System.Windows.Forms.Label();
             this.labelID = new System.Windows.Forms.Label();
-            this.labelAnimalWeight = new System.Windows.Forms.Label();
             this.labelAnimalGender = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.labelCategoryOutput = new System.Windows.Forms.Label();
-            this.labelCategory = new System.Windows.Forms.Label();
-            this.labelSpecificAnimal = new System.Windows.Forms.Label();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.listBox2 = new System.Windows.Forms.ListBox();
             this.labelEaterType = new System.Windows.Forms.Label();
             this.labelEaterTypeOutput = new System.Windows.Forms.Label();
             this.labelList = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.groupBoxAnimalSpecifications.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // buttonAdd
@@ -239,24 +229,6 @@
             this.labelAnimalAge.TabIndex = 6;
             this.labelAnimalAge.Text = "labelAnimalAge";
             // 
-            // labelAnimalSpecific2Output
-            // 
-            this.labelAnimalSpecific2Output.AutoSize = true;
-            this.labelAnimalSpecific2Output.Location = new System.Drawing.Point(141, 127);
-            this.labelAnimalSpecific2Output.Name = "labelAnimalSpecific2Output";
-            this.labelAnimalSpecific2Output.Size = new System.Drawing.Size(28, 15);
-            this.labelAnimalSpecific2Output.TabIndex = 8;
-            this.labelAnimalSpecific2Output.Text = "LOL";
-            // 
-            // labelAnimalSpecific2
-            // 
-            this.labelAnimalSpecific2.AutoSize = true;
-            this.labelAnimalSpecific2.Location = new System.Drawing.Point(6, 127);
-            this.labelAnimalSpecific2.Name = "labelAnimalSpecific2";
-            this.labelAnimalSpecific2.Size = new System.Drawing.Size(117, 15);
-            this.labelAnimalSpecific2.TabIndex = 7;
-            this.labelAnimalSpecific2.Text = "labelAnimalSpecific2";
-            // 
             // labelAnimalName
             // 
             this.labelAnimalName.AutoSize = true;
@@ -265,33 +237,6 @@
             this.labelAnimalName.Size = new System.Drawing.Size(102, 15);
             this.labelAnimalName.TabIndex = 12;
             this.labelAnimalName.Text = "labelAnimalName";
-            // 
-            // labelAnimalSpecific1Output
-            // 
-            this.labelAnimalSpecific1Output.AutoSize = true;
-            this.labelAnimalSpecific1Output.Location = new System.Drawing.Point(141, 103);
-            this.labelAnimalSpecific1Output.Name = "labelAnimalSpecific1Output";
-            this.labelAnimalSpecific1Output.Size = new System.Drawing.Size(28, 15);
-            this.labelAnimalSpecific1Output.TabIndex = 6;
-            this.labelAnimalSpecific1Output.Text = "LOL";
-            // 
-            // labelAnimalWeightOutput
-            // 
-            this.labelAnimalWeightOutput.AutoSize = true;
-            this.labelAnimalWeightOutput.Location = new System.Drawing.Point(141, 74);
-            this.labelAnimalWeightOutput.Name = "labelAnimalWeightOutput";
-            this.labelAnimalWeightOutput.Size = new System.Drawing.Size(28, 15);
-            this.labelAnimalWeightOutput.TabIndex = 11;
-            this.labelAnimalWeightOutput.Text = "LOL";
-            // 
-            // labelAnimalSpecific1
-            // 
-            this.labelAnimalSpecific1.AutoSize = true;
-            this.labelAnimalSpecific1.Location = new System.Drawing.Point(6, 103);
-            this.labelAnimalSpecific1.Name = "labelAnimalSpecific1";
-            this.labelAnimalSpecific1.Size = new System.Drawing.Size(117, 15);
-            this.labelAnimalSpecific1.TabIndex = 5;
-            this.labelAnimalSpecific1.Text = "labelAnimalSpecific1";
             // 
             // labelID
             // 
@@ -302,15 +247,6 @@
             this.labelID.TabIndex = 0;
             this.labelID.Text = "labelID";
             // 
-            // labelAnimalWeight
-            // 
-            this.labelAnimalWeight.AutoSize = true;
-            this.labelAnimalWeight.Location = new System.Drawing.Point(6, 74);
-            this.labelAnimalWeight.Name = "labelAnimalWeight";
-            this.labelAnimalWeight.Size = new System.Drawing.Size(108, 15);
-            this.labelAnimalWeight.TabIndex = 10;
-            this.labelAnimalWeight.Text = "labelAnimalWeight";
-            // 
             // labelAnimalGender
             // 
             this.labelAnimalGender.AutoSize = true;
@@ -319,51 +255,6 @@
             this.labelAnimalGender.Size = new System.Drawing.Size(108, 15);
             this.labelAnimalGender.TabIndex = 8;
             this.labelAnimalGender.Text = "labelAnimalGender";
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.labelCategoryOutput);
-            this.groupBox2.Controls.Add(this.labelCategory);
-            this.groupBox2.Controls.Add(this.labelSpecificAnimal);
-            this.groupBox2.Controls.Add(this.labelAnimalSpecific2Output);
-            this.groupBox2.Controls.Add(this.labelAnimalWeightOutput);
-            this.groupBox2.Controls.Add(this.labelAnimalSpecific1);
-            this.groupBox2.Controls.Add(this.labelAnimalWeight);
-            this.groupBox2.Controls.Add(this.labelAnimalSpecific1Output);
-            this.groupBox2.Controls.Add(this.labelAnimalSpecific2);
-            this.groupBox2.Location = new System.Drawing.Point(12, 371);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(267, 172);
-            this.groupBox2.TabIndex = 6;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "groupBox2";
-            // 
-            // labelCategoryOutput
-            // 
-            this.labelCategoryOutput.AutoSize = true;
-            this.labelCategoryOutput.Location = new System.Drawing.Point(141, 47);
-            this.labelCategoryOutput.Name = "labelCategoryOutput";
-            this.labelCategoryOutput.Size = new System.Drawing.Size(0, 15);
-            this.labelCategoryOutput.TabIndex = 14;
-            this.labelCategoryOutput.Text = "LOL";
-            // 
-            // labelCategory
-            // 
-            this.labelCategory.AutoSize = true;
-            this.labelCategory.Location = new System.Drawing.Point(6, 47);
-            this.labelCategory.Name = "labelCategory";
-            this.labelCategory.Size = new System.Drawing.Size(58, 15);
-            this.labelCategory.TabIndex = 13;
-            this.labelCategory.Text = "Category:";
-            // 
-            // labelSpecificAnimal
-            // 
-            this.labelSpecificAnimal.AutoSize = true;
-            this.labelSpecificAnimal.Location = new System.Drawing.Point(4, 19);
-            this.labelSpecificAnimal.Name = "labelSpecificAnimal";
-            this.labelSpecificAnimal.Size = new System.Drawing.Size(111, 15);
-            this.labelSpecificAnimal.TabIndex = 12;
-            this.labelSpecificAnimal.Text = "labelSpecificAnimal";
             // 
             // listBox1
             // 
@@ -409,17 +300,25 @@
             this.labelList.TabIndex = 17;
             this.labelList.Text = "labelList";
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(22, 371);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(260, 152);
+            this.textBox1.TabIndex = 18;
+            // 
             // Mainform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(831, 545);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.labelList);
             this.Controls.Add(this.labelEaterTypeOutput);
             this.Controls.Add(this.labelEaterType);
             this.Controls.Add(this.listBox2);
             this.Controls.Add(this.listBox1);
-            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.labelAnimalName);
             this.Controls.Add(this.labelAnimalAge);
             this.Controls.Add(this.labelAnimalGender);
@@ -429,8 +328,6 @@
             this.Text = "Form1";
             this.groupBoxAnimalSpecifications.ResumeLayout(false);
             this.groupBoxAnimalSpecifications.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -456,23 +353,14 @@
         private TextBox textBoxWeight;
         private Label labelWeight;
         private Label labelAnimalName;
-        private Label labelAnimalWeightOutput;
         private Label labelID;
-        private Label labelAnimalWeight;
         private Label labelAnimalAge;
         private Label labelAnimalGender;
-        private Label labelAnimalSpecific2Output;
-        private Label labelAnimalSpecific2;
-        private Label labelAnimalSpecific1Output;
-        private Label labelAnimalSpecific1;
-        private GroupBox groupBox2;
         private ListBox listBox1;
-        private Label labelCategoryOutput;
-        private Label labelCategory;
-        private Label labelSpecificAnimal;
         private ListBox listBox2;
         private Label labelEaterType;
         private Label labelEaterTypeOutput;
         private Label labelList;
+        private TextBox textBox1;
     }
 }

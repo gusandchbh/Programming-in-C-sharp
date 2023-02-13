@@ -30,7 +30,7 @@ namespace Assignment2.Animals.Categories
         {
             string strOut = base.GetExtraInfo();
 
-            strOut += string.Format("{0,-15} {1,15}\n", "Swimspeed:", SwimSpeed);
+            strOut += Environment.NewLine + string.Format("{0,-28}, {1, -17}\n", "Swimspeed:", SwimSpeed).Replace(",", "") + Environment.NewLine;
 
             return strOut;
         }

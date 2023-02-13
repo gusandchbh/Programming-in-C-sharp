@@ -29,10 +29,8 @@ namespace Assignment2
             labelWeight.Text = "Weight (kg)";
             labelAnimalGender.Text = "Gender";
             labelAnimalAge.Text = "Age";
-            labelAnimalWeight.Text = "Weight (kg):";
             labelAnimalName.Text = "Name";
             labelID.Text = "ID";
-            groupBox2.Text = "";
             labelList.Text = "List of registered animals";
             buttonAdd.Visible = false;
             foreach (var gender in Enum.GetValues(typeof(Gender))) // Add MALE, FEMALE and UNKNOWN from gender enum
@@ -205,10 +203,6 @@ namespace Assignment2
                     }
                     animal = new Dog("0000", this.textBoxName.Text, int.Parse(this.textBoxAge.Text), determineGender(), int.Parse(this.textBoxWeight.Text), int.Parse(this.textBoxSpecific2.Text), this.textBoxSpecific1.Text, CategoryType.Mammal);
                     Dog dog = (Dog)animal;
-                    labelAnimalSpecific1Output.Text = dog.Breed;
-                    labelAnimalSpecific2Output.Text = dog.ExpectedLifeSpan.ToString();
-                    labelAnimalSpecific1.Text = "Breed";
-                    labelAnimalSpecific2.Text = "Expected lifespan";
                     break;
                 case "MONKEY":
                     if (!onlyDigits(this.textBoxSpecific2.Text))
@@ -218,10 +212,6 @@ namespace Assignment2
                     }
                     animal = new Monkey(animalManager.GetNewID(CategoryType.Mammal), this.textBoxName.Text, int.Parse(this.textBoxAge.Text), determineGender(), int.Parse(this.textBoxWeight.Text), int.Parse(this.textBoxSpecific2.Text), this.textBoxSpecific1.Text, CategoryType.Mammal);
                     Monkey monkey = (Monkey)animal;
-                    labelAnimalSpecific1Output.Text = monkey.FavoriteFruit;
-                    labelAnimalSpecific2Output.Text = monkey.ExpectedLifeSpan.ToString();
-                    labelAnimalSpecific1.Text = "Favorite fruit";
-                    labelAnimalSpecific2.Text = "Expected lifespan";
                     break;
                 case "WHALE":
                     if (!onlyDigits(textBoxSpecific1.Text))
@@ -236,10 +226,6 @@ namespace Assignment2
                     }
                     animal = new Whale("0000", textBoxName.Text, int.Parse(textBoxAge.Text), determineGender(), int.Parse(textBoxWeight.Text), int.Parse(textBoxSpecific2.Text), int.Parse(textBoxSpecific1.Text), CategoryType.Fish);
                     Whale whale = (Whale)animal;
-                    labelAnimalSpecific1Output.Text = whale.Blowholes.ToString();
-                    labelAnimalSpecific2Output.Text = whale.SwimSpeed.ToString();
-                    labelAnimalSpecific1.Text = "Blowholes";
-                    labelAnimalSpecific2.Text = "Swim speed (km/h)";
                     break;
                 case "SHARK":
                     if (!onlyDigits(this.textBoxSpecific1.Text))
@@ -254,19 +240,14 @@ namespace Assignment2
                     }
                     animal = new Shark(animalManager.GetNewID(CategoryType.Mammal), textBoxName.Text, int.Parse(textBoxAge.Text), determineGender(), int.Parse(textBoxWeight.Text), int.Parse(textBoxSpecific2.Text), int.Parse(textBoxSpecific1.Text), CategoryType.Fish);
                     Shark shark = (Shark)animal;
-                    labelAnimalSpecific1Output.Text = shark.Teeth.ToString();
-                    labelAnimalSpecific2Output.Text = shark.SwimSpeed.ToString();
-                    labelAnimalSpecific1.Text = "Teeth:";
-                    labelAnimalSpecific2.Text = "Swim speed (km/h):";
+
                     labelEaterTypeOutput.Text = animal.getFoodSchedule().EaterType.ToString();
                     listBox2.DataSource = animal.getFoodSchedule().GetFoodListInfoStrings();
-                    labelSpecificAnimal.Text = "Shark";
-                    labelCategoryOutput.Text = shark.Category.ToString();
                     break;
             }
             animalManager.Add(animal);
             listBox1.DataSource = animalManager.GetAnimalInfoStrings();
-            labelAnimalWeightOutput.Text = animal.Weight.ToString();
+            textBox1.Text = animal.GetExtraInfo();
 
         }
     }

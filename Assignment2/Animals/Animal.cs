@@ -36,7 +36,7 @@ namespace Assignment2.Animals
         {
             string strOut = string.Empty;
 
-            strOut = string.Format("{0,-15} {1,10}\n", "Category:", category.ToString());
+            strOut = string.Format("{0,-20} {1,15}\n", "Category:", category.ToString()) + Environment.NewLine;
 
             return strOut;
         }
