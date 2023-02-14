@@ -233,7 +233,7 @@ public partial class Mainform : Form
                     return;
                 }
 
-                animal = new Dog(animalManager.GetNewID(CategoryType.Mammal), textBoxName.Text,
+                animal = new Dog("0", textBoxName.Text,
                     int.Parse(textBoxAge.Text), determineGender(), int.Parse(textBoxWeight.Text),
                     int.Parse(textBoxSpecific2.Text), textBoxSpecific1.Text, CategoryType.Mammal);
                 break;
@@ -244,7 +244,7 @@ public partial class Mainform : Form
                     return;
                 }
 
-                animal = new Monkey(animalManager.GetNewID(CategoryType.Mammal), textBoxName.Text,
+                animal = new Monkey("0", textBoxName.Text,
                     int.Parse(textBoxAge.Text), determineGender(), int.Parse(textBoxWeight.Text),
                     int.Parse(textBoxSpecific2.Text), textBoxSpecific1.Text, CategoryType.Mammal);
                 break;
@@ -261,7 +261,7 @@ public partial class Mainform : Form
                     return;
                 }
 
-                animal = new Whale(animalManager.GetNewID(CategoryType.Fish), textBoxName.Text,
+                animal = new Whale("0", textBoxName.Text,
                     int.Parse(textBoxAge.Text), determineGender(), int.Parse(textBoxWeight.Text),
                     int.Parse(textBoxSpecific2.Text), int.Parse(textBoxSpecific1.Text), CategoryType.Fish);
                 break;
@@ -278,7 +278,7 @@ public partial class Mainform : Form
                     return;
                 }
 
-                animal = new Shark(animalManager.GetNewID(CategoryType.Fish), textBoxName.Text,
+                animal = new Shark("0", textBoxName.Text,
                     int.Parse(textBoxAge.Text), determineGender(), int.Parse(textBoxWeight.Text),
                     int.Parse(textBoxSpecific2.Text), int.Parse(textBoxSpecific1.Text), CategoryType.Fish);
                 break;
@@ -295,7 +295,7 @@ public partial class Mainform : Form
                     return;
                 }
 
-                animal = new Spider(animalManager.GetNewID(CategoryType.Insect), textBoxName.Text,
+                animal = new Spider("0", textBoxName.Text,
                     int.Parse(textBoxAge.Text), determineGender(), int.Parse(textBoxWeight.Text),
                     int.Parse(textBoxSpecific2.Text), int.Parse(textBoxSpecific1.Text), CategoryType.Insect);
                 break;
@@ -312,7 +312,7 @@ public partial class Mainform : Form
                     return;
                 }
 
-                animal = new Spider(animalManager.GetNewID(CategoryType.Insect), textBoxName.Text,
+                animal = new Spider("0", textBoxName.Text,
                     int.Parse(textBoxAge.Text), determineGender(), int.Parse(textBoxWeight.Text),
                     int.Parse(textBoxSpecific2.Text), int.Parse(textBoxSpecific1.Text), CategoryType.Insect);
                 break;
@@ -323,12 +323,12 @@ public partial class Mainform : Form
                     return;
                 }
 
-                animal = new Penguin(animalManager.GetNewID(CategoryType.Bird), textBoxName.Text,
+                animal = new Penguin("0", textBoxName.Text,
                     int.Parse(textBoxAge.Text), determineGender(), int.Parse(textBoxWeight.Text), textBoxSpecific2.Text,
                     int.Parse(textBoxSpecific1.Text), CategoryType.Bird);
                 break;
             case "PARROT":
-                animal = new Parrot(animalManager.GetNewID(CategoryType.Bird), textBoxName.Text,
+                animal = new Parrot("0", textBoxName.Text,
                     int.Parse(textBoxAge.Text), determineGender(), int.Parse(textBoxWeight.Text), textBoxSpecific2.Text,
                     textBoxSpecific1.Text, CategoryType.Bird);
                 break;
