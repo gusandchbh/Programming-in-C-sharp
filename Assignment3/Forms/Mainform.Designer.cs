@@ -32,6 +32,7 @@
             this.textBoxName = new System.Windows.Forms.TextBox();
             this.textBoxAge = new System.Windows.Forms.TextBox();
             this.groupBoxAnimalSpecifications = new System.Windows.Forms.GroupBox();
+            this.listBox3 = new System.Windows.Forms.ListBox();
             this.labelFoodItemsIngredients = new System.Windows.Forms.Label();
             this.labelFoodItemsName = new System.Windows.Forms.Label();
             this.buttonFoodItems = new System.Windows.Forms.Button();
@@ -58,7 +59,8 @@
             this.labelEaterTypeOutput = new System.Windows.Forms.Label();
             this.labelList = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.listBox3 = new System.Windows.Forms.ListBox();
+            this.buttonDeleteFoodItem = new System.Windows.Forms.Button();
+            this.buttonDeleteAnimal = new System.Windows.Forms.Button();
             this.groupBoxAnimalSpecifications.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -66,7 +68,7 @@
             // 
             this.buttonAdd.Location = new System.Drawing.Point(324, 258);
             this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.Size = new System.Drawing.Size(90, 34);
+            this.buttonAdd.Size = new System.Drawing.Size(92, 38);
             this.buttonAdd.TabIndex = 0;
             this.buttonAdd.Text = "buttonAdd";
             this.buttonAdd.UseVisualStyleBackColor = true;
@@ -88,6 +90,8 @@
             // 
             // groupBoxAnimalSpecifications
             // 
+            this.groupBoxAnimalSpecifications.Controls.Add(this.buttonDeleteAnimal);
+            this.groupBoxAnimalSpecifications.Controls.Add(this.buttonDeleteFoodItem);
             this.groupBoxAnimalSpecifications.Controls.Add(this.listBox3);
             this.groupBoxAnimalSpecifications.Controls.Add(this.labelFoodItemsIngredients);
             this.groupBoxAnimalSpecifications.Controls.Add(this.labelFoodItemsName);
@@ -115,6 +119,15 @@
             this.groupBoxAnimalSpecifications.TabStop = false;
             this.groupBoxAnimalSpecifications.Text = "groupBoxAnimalSpecifications";
             // 
+            // listBox3
+            // 
+            this.listBox3.FormattingEnabled = true;
+            this.listBox3.ItemHeight = 15;
+            this.listBox3.Location = new System.Drawing.Point(525, 40);
+            this.listBox3.Name = "listBox3";
+            this.listBox3.Size = new System.Drawing.Size(225, 139);
+            this.listBox3.TabIndex = 22;
+            // 
             // labelFoodItemsIngredients
             // 
             this.labelFoodItemsIngredients.AutoSize = true;
@@ -135,7 +148,7 @@
             // 
             // buttonFoodItems
             // 
-            this.buttonFoodItems.Location = new System.Drawing.Point(590, 191);
+            this.buttonFoodItems.Location = new System.Drawing.Point(545, 191);
             this.buttonFoodItems.Name = "buttonFoodItems";
             this.buttonFoodItems.Size = new System.Drawing.Size(88, 37);
             this.buttonFoodItems.TabIndex = 18;
@@ -215,7 +228,7 @@
             this.listBoxGenderType.ItemHeight = 15;
             this.listBoxGenderType.Location = new System.Drawing.Point(120, 143);
             this.listBoxGenderType.Name = "listBoxGenderType";
-            this.listBoxGenderType.Size = new System.Drawing.Size(120, 49);
+            this.listBoxGenderType.Size = new System.Drawing.Size(126, 34);
             this.listBoxGenderType.TabIndex = 9;
             // 
             // labelAge
@@ -345,14 +358,23 @@
             this.textBox1.Size = new System.Drawing.Size(260, 152);
             this.textBox1.TabIndex = 18;
             // 
-            // listBox3
+            // buttonDeleteFoodItem
             // 
-            this.listBox3.FormattingEnabled = true;
-            this.listBox3.ItemHeight = 15;
-            this.listBox3.Location = new System.Drawing.Point(525, 40);
-            this.listBox3.Name = "listBox3";
-            this.listBox3.Size = new System.Drawing.Size(225, 139);
-            this.listBox3.TabIndex = 22;
+            this.buttonDeleteFoodItem.Location = new System.Drawing.Point(639, 192);
+            this.buttonDeleteFoodItem.Name = "buttonDeleteFoodItem";
+            this.buttonDeleteFoodItem.Size = new System.Drawing.Size(111, 36);
+            this.buttonDeleteFoodItem.TabIndex = 23;
+            this.buttonDeleteFoodItem.Text = "Delete";
+            this.buttonDeleteFoodItem.UseVisualStyleBackColor = true;
+            // 
+            // buttonDeleteAnimal
+            // 
+            this.buttonDeleteAnimal.Location = new System.Drawing.Point(422, 259);
+            this.buttonDeleteAnimal.Name = "buttonDeleteAnimal";
+            this.buttonDeleteAnimal.Size = new System.Drawing.Size(89, 37);
+            this.buttonDeleteAnimal.TabIndex = 24;
+            this.buttonDeleteAnimal.Text = "Delete Animal";
+            this.buttonDeleteAnimal.UseVisualStyleBackColor = true;
             // 
             // Mainform
             // 
@@ -413,5 +435,7 @@
         private TextBox textBox2;
         private Button buttonFoodItems;
         private ListBox listBox3;
+        private Button buttonDeleteFoodItem;
+        private Button buttonDeleteAnimal;
     }
 }

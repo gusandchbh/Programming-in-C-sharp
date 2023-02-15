@@ -28,23 +28,26 @@ namespace Assignment3.Forms
             textBoxName.Text = foodItem.Name;
             if (foodItem.Ingredients.Count > 0)
             {
-                listBox1.Items.Add(foodItem);
+                listBox1.Items.AddRange(foodItem.Ingredients.GetÍnfo());
             }
         }
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
             foodItem.Name = textBoxName.Text;
+            listBox1.Items.Remove(foodItem);
             foodItem.Ingredients.Add(textBoxIngredient.Text);
-            listBox1.Items.Add(foodItem);
+            listBox1.Items.Add(textBoxIngredient.Text);
         }
 
         private void buttonChange_Click(object sender, EventArgs e)
         {
-            if (listBox1.SelectedIndex != -1)
+            int index = listBox1.SelectedIndex;
+            if (index != -1)
             {
-                string ingredient = foodItem.Ingredients.Get(listBox1.SelectedIndex);
-                
+                foodItem.Ingredients.Replace(foodItem.Ingredients.Get(index), textBoxIngredient.Text);
+                listBox1.Items.RemoveAt(index);
+                listBox1.Items.Add(textBoxIngredient.Text);
             }
         }
 
@@ -54,7 +57,7 @@ namespace Assignment3.Forms
             if (listBox1.SelectedIndex != -1)
             {
                 foodItem.Ingredients.DeleteAt(index);
-                listBox1.Items.RemoveAt(listBox1.SelectedIndex);
+                listBox1.Items.RemoveAt(index);
             }
         }
 
@@ -65,6 +68,7 @@ namespace Assignment3.Forms
 
         private void buttonOK_Click(object sender, EventArgs e)
         {
+            foodItem.Name = textBoxName.Text;
             DialogResult = DialogResult.OK;
             this.Close();
         }
