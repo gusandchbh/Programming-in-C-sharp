@@ -79,6 +79,7 @@ namespace Assignment3.Manager
 
         public string[] GetÍnfo()
         {
+            MessageBox.Show(Count.ToString());
             string[] infoStrings = new string[Count];
             for (int i = 0; i < Count; i++)
             {

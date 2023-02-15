@@ -11,7 +11,7 @@ namespace Assignment3.Forms;
 public partial class Mainform : Form
 {
     private Animal animal; // Declare animal
-    private readonly AnimalManager animalManager = new(new List<Animal>(), 1);
+    private readonly AnimalManager animalManager = new( 0);
 
     public Mainform()
     {
@@ -334,19 +334,42 @@ public partial class Mainform : Form
                 break;
         }
 
-        animalManager.Add(animal);
+        AddAnimal(animal);
         labelEaterTypeOutput.Text = animal.getFoodSchedule().EaterType.ToString();
         listBox2.DataSource = animal.getFoodSchedule().GetFoodListInfoStrings();
-        listBox1.DataSource = animalManager.GetAnimalInfoStrings();
+        listBox1.DataSource = animalManager.GetÍnfo();
         textBox1.Text = animal.GetExtraInfo();
     }
 
     private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
     {
         var index = listBox1.SelectedIndex;
-        animal = animalManager.GetAnimalAt(index);
+        animal = animalManager.Get(index);
         labelEaterTypeOutput.Text = animal.getFoodSchedule().EaterType.ToString();
         listBox2.DataSource = animal.getFoodSchedule().GetFoodListInfoStrings();
         textBox1.Text = animal.GetExtraInfo();
+    }
+
+    public bool AddAnimal(Animal animal)
+    {
+        bool ok = false;
+
+        if (animal != null)
+        {
+            animal.ID = animalManager.GetNewId().ToString();
+            animalManager.Add(animal);
+            ok = true;
+        }
+
+        return ok;
+    }
+
+    private void buttonFoodItems_Click(object sender, EventArgs e)
+    {
+        FoodForm foodForm = new FoodForm();
+        if (foodForm.ShowDialog() == DialogResult.OK)
+        {
+            textBox2.Text = foodForm.FoodItem.ToString();
+        }
     }
 }

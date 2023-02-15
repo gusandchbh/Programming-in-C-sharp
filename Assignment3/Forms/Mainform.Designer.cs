@@ -32,6 +32,9 @@
             this.textBoxName = new System.Windows.Forms.TextBox();
             this.textBoxAge = new System.Windows.Forms.TextBox();
             this.groupBoxAnimalSpecifications = new System.Windows.Forms.GroupBox();
+            this.labelFoodItemsIngredients = new System.Windows.Forms.Label();
+            this.labelFoodItemsName = new System.Windows.Forms.Label();
+            this.buttonFoodItems = new System.Windows.Forms.Button();
             this.textBoxWeight = new System.Windows.Forms.TextBox();
             this.labelWeight = new System.Windows.Forms.Label();
             this.textBoxSpecific2 = new System.Windows.Forms.TextBox();
@@ -55,14 +58,15 @@
             this.labelEaterTypeOutput = new System.Windows.Forms.Label();
             this.labelList = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.listBox3 = new System.Windows.Forms.ListBox();
             this.groupBoxAnimalSpecifications.SuspendLayout();
             this.SuspendLayout();
             // 
             // buttonAdd
             // 
-            this.buttonAdd.Location = new System.Drawing.Point(324, 269);
+            this.buttonAdd.Location = new System.Drawing.Point(324, 258);
             this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.Size = new System.Drawing.Size(75, 23);
+            this.buttonAdd.Size = new System.Drawing.Size(90, 34);
             this.buttonAdd.TabIndex = 0;
             this.buttonAdd.Text = "buttonAdd";
             this.buttonAdd.UseVisualStyleBackColor = true;
@@ -84,6 +88,10 @@
             // 
             // groupBoxAnimalSpecifications
             // 
+            this.groupBoxAnimalSpecifications.Controls.Add(this.listBox3);
+            this.groupBoxAnimalSpecifications.Controls.Add(this.labelFoodItemsIngredients);
+            this.groupBoxAnimalSpecifications.Controls.Add(this.labelFoodItemsName);
+            this.groupBoxAnimalSpecifications.Controls.Add(this.buttonFoodItems);
             this.groupBoxAnimalSpecifications.Controls.Add(this.textBoxWeight);
             this.groupBoxAnimalSpecifications.Controls.Add(this.labelWeight);
             this.groupBoxAnimalSpecifications.Controls.Add(this.textBoxSpecific2);
@@ -106,6 +114,34 @@
             this.groupBoxAnimalSpecifications.TabIndex = 3;
             this.groupBoxAnimalSpecifications.TabStop = false;
             this.groupBoxAnimalSpecifications.Text = "groupBoxAnimalSpecifications";
+            // 
+            // labelFoodItemsIngredients
+            // 
+            this.labelFoodItemsIngredients.AutoSize = true;
+            this.labelFoodItemsIngredients.Location = new System.Drawing.Point(654, 18);
+            this.labelFoodItemsIngredients.Name = "labelFoodItemsIngredients";
+            this.labelFoodItemsIngredients.Size = new System.Drawing.Size(66, 15);
+            this.labelFoodItemsIngredients.TabIndex = 21;
+            this.labelFoodItemsIngredients.Text = "Ingredients";
+            // 
+            // labelFoodItemsName
+            // 
+            this.labelFoodItemsName.AutoSize = true;
+            this.labelFoodItemsName.Location = new System.Drawing.Point(531, 16);
+            this.labelFoodItemsName.Name = "labelFoodItemsName";
+            this.labelFoodItemsName.Size = new System.Drawing.Size(39, 15);
+            this.labelFoodItemsName.TabIndex = 20;
+            this.labelFoodItemsName.Text = "Name";
+            // 
+            // buttonFoodItems
+            // 
+            this.buttonFoodItems.Location = new System.Drawing.Point(590, 191);
+            this.buttonFoodItems.Name = "buttonFoodItems";
+            this.buttonFoodItems.Size = new System.Drawing.Size(88, 37);
+            this.buttonFoodItems.TabIndex = 18;
+            this.buttonFoodItems.Text = "Food Items";
+            this.buttonFoodItems.UseVisualStyleBackColor = true;
+            this.buttonFoodItems.Click += new System.EventHandler(this.buttonFoodItems_Click);
             // 
             // textBoxWeight
             // 
@@ -204,7 +240,7 @@
             // 
             this.listBoxAnimalObject.FormattingEnabled = true;
             this.listBoxAnimalObject.ItemHeight = 15;
-            this.listBoxAnimalObject.Location = new System.Drawing.Point(474, 40);
+            this.listBoxAnimalObject.Location = new System.Drawing.Point(374, 40);
             this.listBoxAnimalObject.Name = "listBoxAnimalObject";
             this.listBoxAnimalObject.Size = new System.Drawing.Size(120, 94);
             this.listBoxAnimalObject.TabIndex = 6;
@@ -214,7 +250,7 @@
             // 
             this.listBoxCategoryType.FormattingEnabled = true;
             this.listBoxCategoryType.ItemHeight = 15;
-            this.listBoxCategoryType.Location = new System.Drawing.Point(303, 40);
+            this.listBoxCategoryType.Location = new System.Drawing.Point(248, 40);
             this.listBoxCategoryType.Name = "listBoxCategoryType";
             this.listBoxCategoryType.Size = new System.Drawing.Size(120, 94);
             this.listBoxCategoryType.TabIndex = 5;
@@ -309,6 +345,15 @@
             this.textBox1.Size = new System.Drawing.Size(260, 152);
             this.textBox1.TabIndex = 18;
             // 
+            // listBox3
+            // 
+            this.listBox3.FormattingEnabled = true;
+            this.listBox3.ItemHeight = 15;
+            this.listBox3.Location = new System.Drawing.Point(525, 40);
+            this.listBox3.Name = "listBox3";
+            this.listBox3.Size = new System.Drawing.Size(225, 139);
+            this.listBox3.TabIndex = 22;
+            // 
             // Mainform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -363,5 +408,10 @@
         private Label labelEaterTypeOutput;
         private Label labelList;
         private TextBox textBox1;
+        private Label labelFoodItemsIngredients;
+        private Label labelFoodItemsName;
+        private TextBox textBox2;
+        private Button buttonFoodItems;
+        private ListBox listBox3;
     }
 }
