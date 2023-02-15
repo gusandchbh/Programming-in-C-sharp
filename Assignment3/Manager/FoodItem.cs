@@ -2,16 +2,14 @@
 {
     public class FoodItem
     {
-        private string id;
         private ListManager<string> ingredients;
         private string name;
 
-        public string ID
+        public FoodItem()
         {
-            get { return id; }
-            set { id = value; }
+            this.ingredients = new ListManager<string>();
+            this.name = "";
         }
-
         public ListManager<string> Ingredients
         { get { return ingredients; } }
 
