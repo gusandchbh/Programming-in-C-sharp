@@ -10,6 +10,7 @@ namespace Assignment3.Forms;
 
 public partial class Mainform : Form
 {
+    private FoodItem foodItem;
     private Animal animal; // Declare animal
     private readonly AnimalManager animalManager = new( 0);
 
@@ -366,10 +367,32 @@ public partial class Mainform : Form
 
     private void buttonFoodItems_Click(object sender, EventArgs e)
     {
-        FoodForm foodForm = new FoodForm();
+        int index = listBox3.SelectedIndex;
+        FoodForm foodForm;
+        bool existing = false;
+        if (index == -1)
+        {
+            foodForm = new FoodForm(new FoodItem(), existing);
+        }
+        else
+        {
+            existing = true;
+            foodItem = (FoodItem)listBox3.SelectedItem;
+            foodForm = new FoodForm(foodItem, existing);
+        }
         if (foodForm.ShowDialog() == DialogResult.OK)
         {
-            textBox2.Text = foodForm.FoodItem.ToString();
+            if (existing)
+            {
+                listBox3.Items.RemoveAt(index);
+                listBox3.Items.Insert(index, foodForm.FoodItem);
+            }
+            else
+            {
+                listBox3.Items.Add(foodForm.FoodItem);
+            }
+            listBox1.SelectedIndex = -1;
         }
+
     }
 }

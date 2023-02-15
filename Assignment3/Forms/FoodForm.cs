@@ -5,10 +5,11 @@ namespace Assignment3.Forms
     public partial class FoodForm : Form
     {
         private FoodItem foodItem;
-        public FoodForm()
+        public FoodForm(FoodItem foodItem, bool existing)
         {
             InitializeComponent();
-            foodItem = new FoodItem();
+            this.foodItem = foodItem;
+            UpdateGUI();
         }
 
         public FoodItem FoodItem
@@ -24,14 +25,18 @@ namespace Assignment3.Forms
 
         void UpdateGUI()
         {
-
+            textBoxName.Text = foodItem.Name;
+            if (foodItem.Ingredients.Count > 0)
+            {
+                listBox1.Items.Add(foodItem);
+            }
         }
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
             foodItem.Name = textBoxName.Text;
             foodItem.Ingredients.Add(textBoxIngredient.Text);
-            listBox1.Items.Add(foodItem.Ingredients.Get(foodItem.Ingredients.Count - 1));
+            listBox1.Items.Add(foodItem);
         }
 
         private void buttonChange_Click(object sender, EventArgs e)
@@ -45,8 +50,10 @@ namespace Assignment3.Forms
 
         private void buttonDelete_Click(object sender, EventArgs e)
         {
+            int index = listBox1.SelectedIndex;
             if (listBox1.SelectedIndex != -1)
             {
+                foodItem.Ingredients.DeleteAt(index);
                 listBox1.Items.RemoveAt(listBox1.SelectedIndex);
             }
         }
@@ -58,7 +65,8 @@ namespace Assignment3.Forms
 
         private void buttonOK_Click(object sender, EventArgs e)
         {
-
+            DialogResult = DialogResult.OK;
+            this.Close();
         }
     }
 }

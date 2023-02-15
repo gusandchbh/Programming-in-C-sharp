@@ -18,5 +18,14 @@
             get { return name; }
             set { name = value; }
         }
+
+        public override string ToString()
+        {
+            string strOut = "";
+            strOut += Name;
+            strOut += "   ";
+            strOut += String.Join(" ",ingredients.GetÍnfo());
+            return strOut;
+        }
     }
 }
