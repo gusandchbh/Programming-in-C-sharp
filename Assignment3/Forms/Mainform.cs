@@ -391,8 +391,25 @@ public partial class Mainform : Form
             {
                 listBox3.Items.Add(foodForm.FoodItem);
             }
-            listBox1.SelectedIndex = -1;
         }
 
+    }
+
+    private void buttonDeleteFoodItem_Click(object sender, EventArgs e)
+    {
+        int index = listBox3.SelectedIndex;
+        listBox3.Items.RemoveAt(index);
+    }
+
+    private void buttonDeleteAnimal_Click(object sender, EventArgs e)
+    {
+        int index = listBox1.SelectedIndex;
+        if (index < 0)
+        {
+            MessageBox.Show("You need to select an animal to delete!");
+            return;
+        }
+        animalManager.DeleteAt(index);
+        listBox1.DataSource = animalManager.GetÍnfo();
     }
 }

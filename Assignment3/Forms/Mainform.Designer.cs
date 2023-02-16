@@ -32,6 +32,8 @@
             this.textBoxName = new System.Windows.Forms.TextBox();
             this.textBoxAge = new System.Windows.Forms.TextBox();
             this.groupBoxAnimalSpecifications = new System.Windows.Forms.GroupBox();
+            this.buttonDeleteAnimal = new System.Windows.Forms.Button();
+            this.buttonDeleteFoodItem = new System.Windows.Forms.Button();
             this.listBox3 = new System.Windows.Forms.ListBox();
             this.labelFoodItemsIngredients = new System.Windows.Forms.Label();
             this.labelFoodItemsName = new System.Windows.Forms.Label();
@@ -59,16 +61,14 @@
             this.labelEaterTypeOutput = new System.Windows.Forms.Label();
             this.labelList = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.buttonDeleteFoodItem = new System.Windows.Forms.Button();
-            this.buttonDeleteAnimal = new System.Windows.Forms.Button();
             this.groupBoxAnimalSpecifications.SuspendLayout();
             this.SuspendLayout();
             // 
             // buttonAdd
             // 
-            this.buttonAdd.Location = new System.Drawing.Point(324, 258);
+            this.buttonAdd.Location = new System.Drawing.Point(297, 258);
             this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.Size = new System.Drawing.Size(92, 38);
+            this.buttonAdd.Size = new System.Drawing.Size(71, 38);
             this.buttonAdd.TabIndex = 0;
             this.buttonAdd.Text = "buttonAdd";
             this.buttonAdd.UseVisualStyleBackColor = true;
@@ -118,6 +118,26 @@
             this.groupBoxAnimalSpecifications.TabIndex = 3;
             this.groupBoxAnimalSpecifications.TabStop = false;
             this.groupBoxAnimalSpecifications.Text = "groupBoxAnimalSpecifications";
+            // 
+            // buttonDeleteAnimal
+            // 
+            this.buttonDeleteAnimal.Location = new System.Drawing.Point(385, 258);
+            this.buttonDeleteAnimal.Name = "buttonDeleteAnimal";
+            this.buttonDeleteAnimal.Size = new System.Drawing.Size(74, 38);
+            this.buttonDeleteAnimal.TabIndex = 24;
+            this.buttonDeleteAnimal.Text = "Delete Animal";
+            this.buttonDeleteAnimal.UseVisualStyleBackColor = true;
+            this.buttonDeleteAnimal.Click += new System.EventHandler(this.buttonDeleteAnimal_Click);
+            // 
+            // buttonDeleteFoodItem
+            // 
+            this.buttonDeleteFoodItem.Location = new System.Drawing.Point(639, 192);
+            this.buttonDeleteFoodItem.Name = "buttonDeleteFoodItem";
+            this.buttonDeleteFoodItem.Size = new System.Drawing.Size(111, 36);
+            this.buttonDeleteFoodItem.TabIndex = 23;
+            this.buttonDeleteFoodItem.Text = "Delete";
+            this.buttonDeleteFoodItem.UseVisualStyleBackColor = true;
+            this.buttonDeleteFoodItem.Click += new System.EventHandler(this.buttonDeleteFoodItem_Click);
             // 
             // listBox3
             // 
@@ -357,24 +377,6 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(260, 152);
             this.textBox1.TabIndex = 18;
-            // 
-            // buttonDeleteFoodItem
-            // 
-            this.buttonDeleteFoodItem.Location = new System.Drawing.Point(639, 192);
-            this.buttonDeleteFoodItem.Name = "buttonDeleteFoodItem";
-            this.buttonDeleteFoodItem.Size = new System.Drawing.Size(111, 36);
-            this.buttonDeleteFoodItem.TabIndex = 23;
-            this.buttonDeleteFoodItem.Text = "Delete";
-            this.buttonDeleteFoodItem.UseVisualStyleBackColor = true;
-            // 
-            // buttonDeleteAnimal
-            // 
-            this.buttonDeleteAnimal.Location = new System.Drawing.Point(422, 259);
-            this.buttonDeleteAnimal.Name = "buttonDeleteAnimal";
-            this.buttonDeleteAnimal.Size = new System.Drawing.Size(89, 37);
-            this.buttonDeleteAnimal.TabIndex = 24;
-            this.buttonDeleteAnimal.Text = "Delete Animal";
-            this.buttonDeleteAnimal.UseVisualStyleBackColor = true;
             // 
             // Mainform
             // 
