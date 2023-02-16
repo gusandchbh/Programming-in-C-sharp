@@ -342,6 +342,12 @@ public partial class Mainform : Form
         textBox1.Text = animal.GetExtraInfo();
     }
 
+    /// <summary>
+    /// This method displays the appropriate information based on the animal that has been selected by the user
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+
     private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
     {
         var index = listBox1.SelectedIndex;
@@ -351,6 +357,11 @@ public partial class Mainform : Form
         textBox1.Text = animal.GetExtraInfo();
     }
 
+    /// <summary>
+    /// This method checks if the animal provided as argument is null, if not it sets the ID and adds it to the list and then returns true to indicate success
+    /// </summary>
+    /// <param name="animal"></param>
+    /// <returns></returns>
     public bool AddAnimal(Animal animal)
     {
         bool ok = false;
@@ -364,6 +375,13 @@ public partial class Mainform : Form
 
         return ok;
     }
+
+    /// <summary>
+    /// If a fooditem is selected we pass that to the foodform, if no fooditem is selected we pass a new empty fooditem to the foodform
+    /// If it was selected and then updated in the form the old one is removed and the new one added, otherwise it is just added
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
 
     private void buttonFoodItems_Click(object sender, EventArgs e)
     {
@@ -395,11 +413,22 @@ public partial class Mainform : Form
 
     }
 
+    /// <summary>
+    /// Removes the fooditem selected by the user
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
     private void buttonDeleteFoodItem_Click(object sender, EventArgs e)
     {
         int index = listBox3.SelectedIndex;
         listBox3.Items.RemoveAt(index);
     }
+
+    /// <summary>
+    /// The animal is deleted and then the listbox datasource is assigned again to reflect the change
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
 
     private void buttonDeleteAnimal_Click(object sender, EventArgs e)
     {
