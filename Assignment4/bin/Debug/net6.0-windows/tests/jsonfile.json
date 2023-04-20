@@ -1,0 +1,22 @@
+[
+  {
+    "FavoriteFruit": "Banana",
+    "ExpectedLifeSpan": 75,
+    "Category": 2,
+    "Age": 20,
+    "Weight": 120,
+    "Name": "Tarzan",
+    "Gender": 0,
+    "ID": "1"
+  },
+  {
+    "Breed": "Husky",
+    "ExpectedLifeSpan": 30,
+    "Category": 2,
+    "Age": 29,
+    "Weight": 65,
+    "Name": "Jane",
+    "Gender": 0,
+    "ID": "2"
+  }
+]
