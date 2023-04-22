@@ -497,7 +497,7 @@ public partial class Mainform : Form
     /// <param name="e"></param>
     private void mnuFileNew_Click(object sender, EventArgs e)
     {
-        if (animalManager.List.Count == 0)
+        if (animalManager.Count == 0)
         {
             InitializeGui();
         } else
@@ -552,7 +552,7 @@ public partial class Mainform : Form
 
     private void mnuFileSaveAsBinary_Click(object sender, EventArgs e)
     {
-        if (animalManager.List.Count == 0)
+        if (animalManager.Count == 0)
         {
             MessageBox.Show("You need to add animals to the list first to be able to save!"); // No point in saving an empty list
             return;
@@ -566,15 +566,15 @@ public partial class Mainform : Form
             string filename = saveFileDialog.FileName;
             if (filename.EndsWith(".bin"))
             {
-                List<Animal> list = animalManager.List;
                 try
                 {
-                    BinSeralizerUtility.BinaryFileSerialize(filename, list); // Pass the list and the filepath to serialize the list
-                } catch(Exception ex)
+                    animalManager.BinarySerialize(filename); 
+                    MessageBox.Show("List has been saved to binary file!");
+                }
+                catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
                 }
-                MessageBox.Show("List has been saved to binary file!");
             }
             else
             {
@@ -582,6 +582,8 @@ public partial class Mainform : Form
             }
         }
     }
+
+
 
     private void mnuFileOpenBinary_Click(object sender, EventArgs e)
     {
@@ -617,15 +619,15 @@ public partial class Mainform : Form
     /// <param name="filepath"></param>
     private void saveCurrent(string filepath)
     {
-        if (animalManager.List.Count == 0)
+        if (animalManager.Count == 0)
         {
             MessageBox.Show("You need to add animals to the list first to be able to save!");
             return;
         }
             if (filepath.EndsWith(".txt"))
             {
-                List<Animal> list = animalManager.List;
-                try
+            List<string> list = animalManager.GetÍnfo().ToList();
+            try
                 {
                     BinSeralizerUtility.BinaryFileSerialize(filepath, list);
                 }
@@ -637,7 +639,7 @@ public partial class Mainform : Form
             }
             else if (filepath.EndsWith(".bin"))
         {
-            List<Animal> list = animalManager.List;
+            List<string> list = animalManager.GetÍnfo().ToList();
             try
             {
                 BinSeralizerUtility.BinaryFileSerialize(filepath, list);
@@ -703,7 +705,7 @@ public partial class Mainform : Form
     /// <param name="e"></param>
     private void mnuFileSaveAsJson_Click(object sender, EventArgs e)
     {
-        if (animalManager.List.Count == 0)
+        if (animalManager.Count == 0)
         {
             MessageBox.Show("You need to add animals to the list first to be able to save!");
             return;
@@ -741,7 +743,7 @@ public partial class Mainform : Form
     /// <param name="e"></param>
     private void mnuFileSaveAsTextFile_Click(object sender, EventArgs e)
     {
-        if (animalManager.List.Count == 0)
+        if (animalManager.Count == 0)
         {
             MessageBox.Show("You need to add animals to the list first to be able to save!");
             return;
@@ -755,10 +757,9 @@ public partial class Mainform : Form
             string filename = saveFileDialog.FileName;
             if (filename.EndsWith(".txt"))
             {
-                List<Animal> list = animalManager.List;
                 try
                 {
-                    BinSeralizerUtility.BinaryFileSerialize(filename, list);
+                animalManager.BinarySerialize(filename);
                 } catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);

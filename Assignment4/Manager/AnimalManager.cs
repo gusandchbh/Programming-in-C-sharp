@@ -18,12 +18,6 @@ public class AnimalManager : ListManager<Animal>
     {
         return Count +1;
     }
-        public override void BinaryDeserialize(string fileName)
-    {
-        string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-        String errorMsg = String.Empty;
-        List = BinSeralizerUtility.BinaryFileDeSerialize(fileName, out errorMsg);
-    }
 
 
 }

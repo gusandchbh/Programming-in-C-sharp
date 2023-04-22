@@ -47,14 +47,6 @@ namespace Assignment3.Manager
             return true;
         }
 
-        public List<T> List
-        {
-            get { return list; }
-            protected set { list = value; }
-        }
-
-
-
         /// <summary>
         /// Deletes object from the list at the provided index. If index is less than 0 or more than count, return false;
         /// </summary>
@@ -157,8 +149,11 @@ namespace Assignment3.Manager
 
         public virtual void BinarySerialize(string fileName)
         {
-            throw new NotImplementedException();
+            string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            string filePath = Path.Combine(desktopPath, fileName);
+            string errorMsg = BinSeralizerUtility.BinaryFileSerialize<T>(filePath, list);
         }
+
 
         public void XMLSerialize(string fileName)
         {
@@ -167,8 +162,11 @@ namespace Assignment3.Manager
 
         public virtual void BinaryDeserialize(string fileName)
         {
-            throw new NotImplementedException();
+            string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            String errorMsg = String.Empty;
+            list = BinSeralizerUtility.BinaryFileDeSerialize<T>(fileName, out errorMsg);
         }
+
 
     }
 }

@@ -11,7 +11,7 @@ namespace Assignment3.Utilities
     public class BinSeralizerUtility
     {
 
-        public static string BinaryFileSerialize(string filePath, List<Animal> animals)
+        public static string BinaryFileSerialize<T>(string filePath, List<T> items)
         {
             FileStream fileStream = null;
             string errorMsg = null;
@@ -20,7 +20,7 @@ namespace Assignment3.Utilities
             {
                 fileStream = new FileStream(filePath, FileMode.Create);
                 BinaryFormatter b = new BinaryFormatter();
-                b.Serialize(fileStream, animals);
+                b.Serialize(fileStream, items);
             }
             catch (Exception e)
             {
@@ -38,11 +38,12 @@ namespace Assignment3.Utilities
 
 
 
-        public static List<Animal> BinaryFileDeSerialize(string filePath, out string errorMessage)
+
+        public static List<T> BinaryFileDeSerialize<T>(string filePath, out string errorMessage)
         {
             FileStream fileStream = null;
             errorMessage = null;
-            List<Animal> animals = null;
+            List<T> items = null;
             try
             {
                 if (!File.Exists(filePath))
@@ -52,14 +53,12 @@ namespace Assignment3.Utilities
                 }
                 fileStream = new FileStream(filePath, FileMode.Open);
                 BinaryFormatter b = new BinaryFormatter();
-                animals = (List<Animal>)b.Deserialize(fileStream);
+                items = (List<T>)b.Deserialize(fileStream);
             }
             catch (Exception e)
             {
-                MessageBox.Show(e.Message);
                 if (errorMessage != null)
                 {
-                    MessageBox.Show(e.Message);
                     errorMessage = e.Message;
                 }
             }
@@ -70,8 +69,9 @@ namespace Assignment3.Utilities
                     fileStream.Close();
                 }
             }
-            return animals;
+            return items;
         }
+
 
 
     }
