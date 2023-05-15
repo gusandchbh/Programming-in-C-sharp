@@ -16,25 +16,19 @@ namespace Assignment5
         public string Destination { get; set; }
         public string FlightID { get; set; }
         public double FlightTime { get; set; }
-        public TimeOnly LocalTime { get; set; }
+        public DateTime LocalTime { get; set; }
         public string Name { get; set; }
+
+        private DateTime FlightEndTime { get; set; }
 
         public Airplane()
         {
 
         }
 
-
-
-        /// <summary>
-        /// Prepare an info string with airplane name, destination, current time(Now)
-        /// Create an AirplaneEventArgs object
-        /// Fire the LAnded event
-        /// Set the destination to "Home"
-        /// </summary>
         public void OnLanding()
         {
-            LocalTime = TimeOnly.FromDateTime(DateTime.Now);
+            LocalTime = DateTime.Now;
             string info = $"{Name} has landed in {Destination}, {LocalTime.ToString("HH:mm:ss")}";
             AirplaneEventArgs args = new AirplaneEventArgs(FlightID, info);
 
@@ -46,13 +40,15 @@ namespace Assignment5
         public void OnTakeOff()
         {
             CanLand = false;
-           
-            LocalTime = TimeOnly.FromDateTime(DateTime.Now);
+
+            LocalTime = DateTime.Now;
 
             string info = $"The aircraft {Name} is taking off, destination {Destination}, {LocalTime.ToString("HH:mm:ss")}";
             AirplaneEventArgs args = new AirplaneEventArgs(FlightID, info);
 
             TakeOff?.Invoke(this, args);
+
+            FlightEndTime = DateTime.Now.AddSeconds(FlightTime);
             SetupTimer();
         }
 
@@ -67,8 +63,7 @@ namespace Assignment5
 
         private void DispatcherTimer_Tick(object? sender, EventArgs e)
         {
-            FlightTime -= 1;
-            if (FlightTime < 0)
+            if (DateTime.Now >= FlightEndTime)
             {
                 CanLand = true;
                 this.StopTimer();

@@ -40,7 +40,6 @@ namespace Assignment5
                     Destination = DescriptionTextBox.Text,
                     FlightTime = flightTime,
                     CanLand = true
-                   
                 };
                 PlanesListBox.Items.Add(airplane);
                 MessagesListBox.Items.Add(airplane + " sent to runway!");
