@@ -7,6 +7,20 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+        <TextBox Name="NameTextBox" HorizontalAlignment="Left" Margin="108,34,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="FlightIdTextBox" HorizontalAlignment="Left" Margin="108,57,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="DescriptionTextBox" HorizontalAlignment="Left" Margin="108,80,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="FlightTimeTextBox" HorizontalAlignment="Left" Margin="108,105,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Button Content="Add Plane" HorizontalAlignment="Left" Margin="203,162,0,0" VerticalAlignment="Top" Height="45" Width="156" Click="Button_Click"/>
+        <Button Content="Take Off" HorizontalAlignment="Left" Margin="448,162,0,0" VerticalAlignment="Top" Height="45" Width="150" Click="Button_Click_1"/>
+        <TextBlock HorizontalAlignment="Left" Margin="26,31,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.726,-0.123"><Run Language="sv-se" Text="Name"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="26,57,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="sv-se" Text="Flight ID"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="26,80,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="sv-se" Text="Description"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="26,101,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="37" Width="60"><Run Language="sv-se" Text="Flight time"/></TextBlock>
+        <ListBox Name="PlanesListBox" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="317,17,72,296"/>
+        <ListBox Name="MessagesListBox" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="48,230,59,40" />
+       
+
 
     </Grid>
 </Window>
