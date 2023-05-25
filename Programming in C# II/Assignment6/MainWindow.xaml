@@ -7,6 +7,58 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="File">
+                <MenuItem Header="Open Invoice" Click="OpenInvoice_Click" />
+                <MenuItem Header="Load Logo" IsEnabled="False" />
+                <Separator/>
+                <MenuItem Header="Print" IsEnabled="False"/>
+                <MenuItem Header="Save As Image" IsEnabled="False"/>
+                <Separator/>
+                <MenuItem Header="Exit" Click="Exit_Click"/>
+            </MenuItem>
+            <MenuItem Header="Help"></MenuItem>
+        </Menu>
+        <Grid x:Name="InvoiceGrid" Margin="10,21,10,0">
+            <Label x:Name="LabelCompanyName" Content="LabelCompanyName" HorizontalAlignment="Left" Margin="17,18,0,0" VerticalAlignment="Top" Width="237" Height="60" FontWeight="Bold" FontSize="20"/>
+            <Label x:Name="LabelInvoiceNumber" Content="Invoice number" HorizontalAlignment="Left" Margin="487,0,0,0" VerticalAlignment="Top"/>
+            <Label x:Name="LabelInvoiceDate" Content="Invoice date" HorizontalAlignment="Left" Margin="487,26,0,0" VerticalAlignment="Top"/>
+            <Label x:Name="LabelDueDate" Content="Due date" HorizontalAlignment="Left" Margin="487,52,0,0" VerticalAlignment="Top"/>
+            <DataGrid x:Name="InvoiceDataGrid" AutoGenerateColumns="False" Margin="14,128,19,128">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Description" Binding="{Binding Description}" Width="125" />
+                    <DataGridTextColumn Header="Quantity" Binding="{Binding Quantity}" Width="125"/>
+                    <DataGridTextColumn Header="Price" Binding="{Binding UnitPrice}" Width="125"/>
+                    <DataGridTextColumn Header="Tax (%)" Binding="{Binding TaxPercent}" Width="125" />
+                    <DataGridTextColumn Header="Total Tax" Binding="{Binding TotalTax}" Width="125"/>
+                    <DataGridTextColumn Header="Total" Binding="{Binding Total}" Width="125"/>
+                </DataGrid.Columns>
+            </DataGrid>
+            <Label Content="Address" HorizontalAlignment="Left" Margin="10,299,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+            <Label x:Name="LabelSenderStreet" Content="Label" HorizontalAlignment="Left" Margin="17,320,0,0" VerticalAlignment="Top"/>
+            <Label x:Name="LabelSenderZipCode" Content="Label" HorizontalAlignment="Left" Margin="17,339,0,0" VerticalAlignment="Top"/>
+            <Label x:Name="LabelSenderCity" Content="Label" HorizontalAlignment="Left" Margin="17,359,0,0" VerticalAlignment="Top"/>
+            <Label x:Name="LabelSenderCountry" Content="Label" HorizontalAlignment="Left" Margin="74,359,0,0" VerticalAlignment="Top"/>
+            <Label x:Name="Contact" Content="Contact" HorizontalAlignment="Left" Margin="348,299,0,0" VerticalAlignment="Top" Height="34" Width="56" FontWeight="Bold"/>
+            <Label x:Name="LabelTotal" Content="Total" HorizontalAlignment="Left" Margin="619,349,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.965,1.119" FontWeight="Bold"/>
+            <Label x:Name="LabelTotalNumber" Content="Label" HorizontalAlignment="Left" Margin="702,349,0,0" VerticalAlignment="Top" Background="#FFCCC1C1"/>
+            <DatePicker x:Name="DateInvoiceDate" HorizontalAlignment="Left" Margin="619,27,0,0" VerticalAlignment="Top"/>
+            <DatePicker x:Name="DateDueDate" HorizontalAlignment="Left" Margin="619,57,0,0" VerticalAlignment="Top"/>
+            <Label x:Name="LabelRecipientName" Content="Label" HorizontalAlignment="Left" Margin="295,0,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.026,-0.576"/>
+            <Label x:Name="LabelRecipientPersonalName" Content="Label" HorizontalAlignment="Left" Margin="295,26,0,0" VerticalAlignment="Top"/>
+            <Label x:Name="LabelRecipientStreet" Content="Label" HorizontalAlignment="Left" Margin="295,48,0,0" VerticalAlignment="Top"/>
+            <Label x:Name="LabelRecipientZipCode" Content="Label" HorizontalAlignment="Left" Margin="295,69,0,0" VerticalAlignment="Top"/>
+            <Label x:Name="LabelRecipientCity" Content="Label" HorizontalAlignment="Left" Margin="338,69,0,0" VerticalAlignment="Top"/>
+            <Label x:Name="LabelRecipientCountry" Content="Label" HorizontalAlignment="Left" Margin="295,95,0,0" VerticalAlignment="Top"/>
+            <Label x:Name="LabelTelephone" Content="Label" HorizontalAlignment="Left" Margin="352,320,0,0" VerticalAlignment="Top"/>
+            <Label x:Name="LabelURL" Content="Label" HorizontalAlignment="Left" Margin="352,344,0,0" VerticalAlignment="Top"/>
+            <Label x:Name="LabelInvoiceNumberValue" Content="Label" HorizontalAlignment="Left" Margin="616,1,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.105,0.425" FontWeight="Bold" Foreground="#FFE41A1A"/>
+            <Label x:Name="LabelDiscount" Content="Discount" HorizontalAlignment="Left" Margin="619,320,0,0" VerticalAlignment="Top"/>
+            <TextBox x:Name="TextBoxDiscount" HorizontalAlignment="Left" Margin="702,325,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="38" Height="19" Background="#FFCCC1C1"/>
+        </Grid>
+        
+
 
     </Grid>
+
 </Window>
