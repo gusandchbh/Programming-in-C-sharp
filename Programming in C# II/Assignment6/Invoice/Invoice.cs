@@ -17,10 +17,11 @@ namespace Assignment6.Invoice
         {
             decimal totalAmount = 0;
 
-            foreach (var item in Items)
-            {
-                totalAmount += item.GetTotalPrice();
-            }
+                foreach (Item item in Items)
+                {
+                    totalAmount += item.GetTotalPrice();
+                }
+            
 
             return Math.Round(totalAmount, 2);
         }

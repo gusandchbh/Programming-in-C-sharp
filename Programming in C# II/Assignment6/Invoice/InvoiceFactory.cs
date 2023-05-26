@@ -12,32 +12,32 @@ namespace Assignment6.Invoice
     {
         public static Invoice CreateInvoice(string filePath)
         {
-            List<string> lines = FileReader.ReadTextFile(filePath).ToList();
+            List<string> rows = FileReader.ReadTextFile(filePath).ToList();
 
             Invoice invoice = new Invoice();
 
-            string invoiceNum = lines[0];
-            var invoiceDate = DateTime.Parse(lines[1]);
-            var dueDate = DateTime.Parse(lines[2]);
+            string invoiceNum = rows[0];
+            DateTime invoiceDate = DateTime.Parse(rows[1]);
+            DateTime dueDate = DateTime.Parse(rows[2]);
             invoice.InvoiceInfo = Tuple.Create(invoiceNum, invoiceDate, dueDate);
 
-            Address recipient_adress = new Address(lines[5], lines[6], lines[7], lines[8]);
-            Recipient recipient = new Recipient(lines[3], recipient_adress, lines[4]);
+            Address recipientAdress = new Address(rows[5], rows[6], rows[7], rows[8]);
+            Recipient recipient = new Recipient(rows[3], recipientAdress, rows[4]);
 
             invoice.Recipient = recipient;
 
-            int numberOfItems = int.Parse(lines[9]);
+            int numberOfItems = int.Parse(rows[9]);
             List<Item> items = new List<Item>();
             for (int i = 0; i < numberOfItems; i++)
             {
-                int lineIndex = 10 + i * 4;
-                items.Add(new Item(lines[lineIndex], int.Parse(lines[lineIndex + 1]), decimal.Parse(lines[lineIndex + 2]), decimal.Parse(lines[lineIndex + 3])));         
+                int rowIndex = 10 + i * 4;
+                items.Add(new Item(rows[rowIndex], int.Parse(rows[rowIndex + 1]), decimal.Parse(rows[rowIndex + 2]), decimal.Parse(rows[rowIndex + 3])));         
             }
             invoice.Items = items;
 
-            int senderStartLine = 10 + numberOfItems * 4;
-            Address address = new Address(lines[senderStartLine + 1], lines[senderStartLine + 2], lines[senderStartLine + 3], lines[senderStartLine + 4]);
-            Sender sender = new Sender(lines[senderStartLine], address, lines[senderStartLine + 5], lines[senderStartLine + 6]);
+            int afterItems = 10 + numberOfItems * 4;
+            Address address = new Address(rows[afterItems + 1], rows[afterItems + 2], rows[afterItems + 3], rows[afterItems + 4]);
+            Sender sender = new Sender(rows[afterItems], address, rows[afterItems + 5], rows[afterItems + 6]);
 
             invoice.Sender = sender;
 

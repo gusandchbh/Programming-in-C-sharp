@@ -13,13 +13,11 @@ namespace Assignment6.Utility
         {
             try
             {
-                // Check if file exists
                 if (!File.Exists(filePath))
                 {
                     throw new FileNotFoundException("Could not find file!", filePath);
                 }
 
-                // Read file content
                 List<string> fileContent = File.ReadLines(filePath, Encoding.UTF8).ToList();
 
                 return fileContent;

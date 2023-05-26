@@ -24,7 +24,7 @@
             <Label x:Name="LabelInvoiceNumber" Content="Invoice number" HorizontalAlignment="Left" Margin="487,0,0,0" VerticalAlignment="Top"/>
             <Label x:Name="LabelInvoiceDate" Content="Invoice date" HorizontalAlignment="Left" Margin="487,26,0,0" VerticalAlignment="Top"/>
             <Label x:Name="LabelDueDate" Content="Due date" HorizontalAlignment="Left" Margin="487,52,0,0" VerticalAlignment="Top"/>
-            <DataGrid x:Name="InvoiceDataGrid" AutoGenerateColumns="False" Margin="14,128,19,128">
+            <DataGrid x:Name="InvoiceDataGrid" AutoGenerateColumns="False" Margin="14,128,10,128">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Description" Binding="{Binding Description}" Width="125" />
                     <DataGridTextColumn Header="Quantity" Binding="{Binding Quantity}" Width="125"/>
@@ -35,9 +35,9 @@
                 </DataGrid.Columns>
             </DataGrid>
             <Label Content="Address" HorizontalAlignment="Left" Margin="10,299,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
-            <Label x:Name="LabelSenderStreet" Content="Label" HorizontalAlignment="Left" Margin="17,320,0,0" VerticalAlignment="Top"/>
-            <Label x:Name="LabelSenderZipCode" Content="Label" HorizontalAlignment="Left" Margin="17,339,0,0" VerticalAlignment="Top"/>
-            <Label x:Name="LabelSenderCity" Content="Label" HorizontalAlignment="Left" Margin="17,359,0,0" VerticalAlignment="Top"/>
+            <Label x:Name="LabelSenderStreet" Content="Label" HorizontalAlignment="Left" Margin="10,320,0,0" VerticalAlignment="Top"/>
+            <Label x:Name="LabelSenderZipCode" Content="Label" HorizontalAlignment="Left" Margin="10,339,0,0" VerticalAlignment="Top"/>
+            <Label x:Name="LabelSenderCity" Content="Label" HorizontalAlignment="Left" Margin="10,359,0,0" VerticalAlignment="Top"/>
             <Label x:Name="LabelSenderCountry" Content="Label" HorizontalAlignment="Left" Margin="74,359,0,0" VerticalAlignment="Top"/>
             <Label x:Name="Contact" Content="Contact" HorizontalAlignment="Left" Margin="348,299,0,0" VerticalAlignment="Top" Height="34" Width="56" FontWeight="Bold"/>
             <Label x:Name="LabelTotal" Content="Total" HorizontalAlignment="Left" Margin="619,349,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.965,1.119" FontWeight="Bold"/>
@@ -48,10 +48,10 @@
             <Label x:Name="LabelRecipientPersonalName" Content="Label" HorizontalAlignment="Left" Margin="295,26,0,0" VerticalAlignment="Top"/>
             <Label x:Name="LabelRecipientStreet" Content="Label" HorizontalAlignment="Left" Margin="295,48,0,0" VerticalAlignment="Top"/>
             <Label x:Name="LabelRecipientZipCode" Content="Label" HorizontalAlignment="Left" Margin="295,69,0,0" VerticalAlignment="Top"/>
-            <Label x:Name="LabelRecipientCity" Content="Label" HorizontalAlignment="Left" Margin="338,69,0,0" VerticalAlignment="Top"/>
+            <Label x:Name="LabelRecipientCity" Content="Label" HorizontalAlignment="Left" Margin="333,69,0,0" VerticalAlignment="Top"/>
             <Label x:Name="LabelRecipientCountry" Content="Label" HorizontalAlignment="Left" Margin="295,95,0,0" VerticalAlignment="Top"/>
-            <Label x:Name="LabelTelephone" Content="Label" HorizontalAlignment="Left" Margin="352,320,0,0" VerticalAlignment="Top"/>
-            <Label x:Name="LabelURL" Content="Label" HorizontalAlignment="Left" Margin="352,344,0,0" VerticalAlignment="Top"/>
+            <Label x:Name="LabelTelephone" Content="Label" HorizontalAlignment="Left" Margin="348,320,0,0" VerticalAlignment="Top"/>
+            <Label x:Name="LabelURL" Content="Label" HorizontalAlignment="Left" Margin="348,344,0,0" VerticalAlignment="Top"/>
             <Label x:Name="LabelInvoiceNumberValue" Content="Label" HorizontalAlignment="Left" Margin="616,1,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.105,0.425" FontWeight="Bold" Foreground="#FFE41A1A"/>
             <Label x:Name="LabelDiscount" Content="Discount" HorizontalAlignment="Left" Margin="619,320,0,0" VerticalAlignment="Top"/>
             <TextBox x:Name="TextBoxDiscount" HorizontalAlignment="Left" Margin="702,325,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="38" Height="19" Background="#FFCCC1C1"/>
