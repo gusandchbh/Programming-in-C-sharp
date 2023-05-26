@@ -10,11 +10,11 @@ Japan
 2
 Coca Cola
 45
-48.90
+48,90
 25
 Cocolate with vanilla
 99
-9.55
+9,55
 12
 Apu Beverages Inc
 Nolland Island 41

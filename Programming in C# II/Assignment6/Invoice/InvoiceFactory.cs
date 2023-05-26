@@ -31,7 +31,8 @@ namespace Assignment6.Invoice
             for (int i = 0; i < numberOfItems; i++)
             {
                 int rowIndex = 10 + i * 4;
-                items.Add(new Item(rows[rowIndex], int.Parse(rows[rowIndex + 1]), decimal.Parse(rows[rowIndex + 2]), decimal.Parse(rows[rowIndex + 3])));         
+
+                items.Add(new Item(rows[rowIndex], int.Parse(rows[rowIndex + 1]), ParseDecimal(rows[rowIndex + 2]), ParseDecimal(rows[rowIndex + 3])));
             }
             invoice.Items = items;
 
@@ -44,5 +45,19 @@ namespace Assignment6.Invoice
             return invoice;
         }
 
+        private static decimal ParseDecimal(string str)
+        {
+            if (str.Contains(","))
+            {
+                str = str.Replace(',', '.');
+            }
+            if (!decimal.TryParse(str, out decimal result))
+            {
+                throw new FormatException($"Cannot parse {str} to decimal");
+            }
+            return result;
+        }
+
+
     }
-    }
+}
