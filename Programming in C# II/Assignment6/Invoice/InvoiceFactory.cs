@@ -47,9 +47,9 @@ namespace Assignment6.Invoice
 
         private static decimal ParseDecimal(string str)
         {
-            if (str.Contains(","))
+            if (str.Contains("."))
             {
-                str = str.Replace(',', '.');
+                str = str.Replace('.', ',');
             }
             if (!decimal.TryParse(str, out decimal result))
             {
