@@ -45,7 +45,7 @@ namespace Assignment6.Invoice
             return invoice;
         }
 
-        private static decimal ParseDecimal(string str)
+        public static decimal ParseDecimal(string str)
         {
             if (str.Contains("."))
             {

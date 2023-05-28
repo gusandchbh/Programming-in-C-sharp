@@ -25,6 +25,7 @@ namespace Assignment6
         {
             InitializeComponent();
             InvoiceGrid.Visibility = Visibility.Hidden;
+            TextBoxDiscount.TextChanged += TextBoxDiscount_TextChanged;
         }
         private void OpenInvoice_Click(object sender, RoutedEventArgs e)
         {
@@ -86,5 +87,21 @@ namespace Assignment6
             Application.Current.Shutdown();
         }
 
+        private void TextBoxDiscount_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            try
+            {
+                if (TextBoxDiscount.Text.Length > 0)
+                {
+                    decimal discount = InvoiceFactory.ParseDecimal(TextBoxDiscount.Text);
+                    LabelTotalNumber.Content = invoice.CalculateTotal() - discount;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+        }
     }
 }
